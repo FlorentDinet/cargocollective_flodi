@@ -3,22 +3,10 @@
  */
 
 
-var Design = {
-	keybindings: function() {
-		// Remove previous bindings
-		Cargo.Core.KeyboardShortcut.Remove("Left");
-		Cargo.Core.KeyboardShortcut.Remove("Right");
+// QUOI ?
 
-		Cargo.Core.KeyboardShortcut.Add("Left", 37, function() {
-			Action.Project.Prev();
-			return false;
-		});
 
-		Cargo.Core.KeyboardShortcut.Add("Right", 39, function() {
-			Action.Project.Next();
-			return false;
-		});
-	},
+
 
 	resizeSlideshow: function(el, obj, state) {
 		if (state == "resize") {
@@ -124,7 +112,7 @@ $(function(){
 });
 
 Cargo.Event.on("project_load_start", function(purl) {
-	console.log("start");	
+	console.log("start");
 	$('body, html').animate({scrollTop:0}, '500');
 	console.log ("scrollTop");
 });
@@ -138,7 +126,7 @@ Cargo.Event.on("project_load_complete", function(pid) {
 		}
 	}
 	$( ".container" ).height($( "#project" ).height());
-	
+
 });
 
 Cargo.Event.on("project_change", function() {
